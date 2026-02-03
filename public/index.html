@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sports Ball Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Sports Ball Shop</h1>
+      <p class="subtitle">Detect a ball and show price (BDT)</p>
+    </header>
+
+    <main class="content">
+      <section id="options" class="card controls">
+        <button id="webcamBtn" class="btn primary">Use Camera</button>
+        <button id="uploadBtn" class="btn">Upload Image</button>
+      </section>
+
+      <section id="webcamSection" class="card media hidden">
+        <div class="media-header">
+          <h2>Camera</h2>
+          <div class="media-actions">
+            <button id="stopBtn" class="btn small">Stop</button>
+          </div>
+        </div>
+        <div id="webcam-container" class="media-container"></div>
+      </section>
+
+      <section id="uploadSection" class="card media hidden">
+        <div class="media-header">
+          <h2>Upload</h2>
+        </div>
+        <input id="fileInput" type="file" accept="image/*" class="file-input" />
+        <img id="preview" class="preview" alt="preview" />
+      </section>
+
+      <section class="card info">
+        <div id="result" class="result">Detected: —</div>
+        <div id="price" class="price">Price: —</div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>Make sure to open via http://localhost:3000 or HTTPS for camera access.</small>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
